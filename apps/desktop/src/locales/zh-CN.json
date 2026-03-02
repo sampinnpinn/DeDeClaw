@@ -1,0 +1,247 @@
+{
+  "nav": {
+    "chat": "聊天",
+    "assets": "资产",
+    "library": "知识库",
+    "market": "市场"
+  },
+  "settings": {
+    "title": "设置",
+    "sections": {
+      "profile": "个人信息",
+      "team": "团队管理",
+      "general": "通用设置",
+      "notifications": "消息通知",
+      "about": "关于"
+    },
+    "profile": {
+      "title": "个人资料",
+      "username": "用户名",
+      "email": "邮箱",
+      "signature": "个性签名",
+      "signaturePlaceholder": "这是我的个性签名",
+      "save": "保存",
+      "accountSecurity": "账户安全",
+      "changePassword": "修改密码",
+      "twoFactor": "两步验证",
+      "notEnabled": "未启用",
+      "accountManagement": "账户管理",
+      "deactivateAccount": "注销账号",
+      "currentPassword": "当前密码",
+      "newPassword": "新密码",
+      "confirmPassword": "确认密码",
+      "currentPasswordPlaceholder": "请输入当前密码",
+      "newPasswordPlaceholder": "请输入新密码",
+      "confirmPasswordPlaceholder": "请再次输入新密码",
+      "toast": {
+        "usernameRequired": "用户名不能为空",
+        "emailInvalid": "请输入正确的邮箱地址",
+        "saveSuccess": "个人资料保存成功"
+      }
+    },
+    "team": {
+      "title": "团队成员",
+      "spaceCode": "空间码",
+      "spaceCodeDesc": "分享此代码以邀请成员加入",
+      "copySpaceCode": "复制空间码",
+      "regenerate": "重新生成",
+      "members": "成员",
+      "memberCount": "{{count}} 人",
+      "role": "角色",
+      "roles": {
+        "admin": "管理员",
+        "member": "成员",
+        "guest": "访客",
+        "remove": "移除"
+      }
+    },
+    "general": {
+      "title": "通用设置",
+      "language": "语言",
+      "theme": "主题",
+      "themes": {
+        "light": "浅色",
+        "dark": "深色",
+        "system": "系统"
+      },
+      "startup": "启动设置",
+      "autoStart": "开机自动启动",
+      "minimizeToTray": "最小化到系统托盘"
+    },
+    "notifications": {
+      "title": "消息通知",
+      "newMessage": "新消息通知",
+      "mention": "提及我时通知",
+      "systemUpdate": "系统更新通知",
+      "teamInvite": "团队邀请通知"
+    },
+    "about": {
+      "title": "关于 DeDe",
+      "version": "版本",
+      "checkUpdate": "检查更新",
+      "currentVersion": "当前版本",
+      "lastUpdated": "最后更新",
+      "systemInfo": "系统信息",
+      "description": "一款现代化的团队协作与沟通工具",
+      "docs": "查看使用文档",
+      "feedback": "反馈问题",
+      "contact": "联系我们",
+      "logout": "退出登录",
+      "clearCache": "清除缓存"
+    }
+  },
+  "common": {
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "edit": "编辑",
+    "confirm": "确认",
+    "select": "请选择",
+    "close": "关闭",
+    "search": "搜索",
+    "loading": "加载中...",
+    "noData": "暂无数据",
+    "selectAll": "全选",
+    "unselectAll": "取消全选",
+    "upload": "上传",
+    "back": "返回",
+    "reply": "回复",
+    "more": "更多"
+  },
+  "time": {
+    "justNow": "刚刚",
+    "minutesAgo": "{{count}} 分钟前",
+    "hoursAgo": "{{count}} 小时前",
+    "daysAgo": "{{count}} 天前"
+  },
+  "chat": {
+    "inputPlaceholder": "输入@可以指定成员回复…",
+    "send": "发送",
+    "typing": "正在输入...",
+    "online": "在线",
+    "offline": "离线",
+    "selectConversation": "选择一个会话开始聊天",
+    "search": "搜索",
+    "voiceCall": "语音通话",
+    "more": "更多",
+    "addMember": "添加成员",
+    "channelSettings": "频道设置",
+    "pinChannel": "置顶频道",
+    "unpinChannel": "取消置顶",
+    "uploadImage": "图片",
+    "uploadFile": "文件",
+    "uploadVideo": "视频",
+    "onlineMode": "联网模式",
+    "attach": "添加附件",
+    "voice": "语音",
+    "views": "{{count}} 次查看"
+  },
+  "conversation": {
+    "searchPlaceholder": "搜索",
+    "newChat": "新建聊天",
+    "newGroup": "创建群组",
+    "addAgent": "添加 Agent",
+    "yesterday": "昨天",
+    "minutes": "{{count}} 分钟",
+    "hours": "{{count}} 小时"
+  },
+  "channel": {
+    "selectGroup": "选择群组"
+  },
+  "messageInput": {
+    "placeholder": "在 {{channelName}} 中发送消息",
+    "uploadImage": "上传图片",
+    "uploadFile": "上传文件",
+    "createTask": "创建任务",
+    "emoji": "表情",
+    "sendHint": "按 Enter 发送，Shift + Enter 换行"
+  },
+  "assets": {
+    "title": "资产管理",
+    "createNew": "新建",
+    "filter": "筛选",
+    "sort": "排序",
+    "searchPlaceholder": "搜索资产...",
+    "batchMode": "批量管理",
+    "exitBatchMode": "退出批量",
+    "selected": "已选 {{count}} 项",
+    "delete": "删除",
+    "move": "移动",
+    "importToLibrary": "导入知识库",
+    "importing": "导入中...",
+    "importToLibraryMessage": "将选中的 {{count}} 项资产导入到知识库",
+    "selectLibraryTag": "选择知识库标签",
+    "keepInAssets": "保留原文件在资产库",
+    "loadLibraryTagsFailed": "加载知识库标签失败",
+    "noAssetSelected": "请先选择要导入的资产",
+    "importSuccess": "成功导入 {{count}} 项资产",
+    "importPartialFailed": "导入完成，成功 {{success}} 项，失败 {{failed}} 项",
+    "importFailed": "导入失败，请稍后重试",
+    "addTag": "添加标签",
+    "tagNamePlaceholder": "标签名称",
+    "deleteConfirm": "确认删除",
+    "deleteMessage": "确定要删除选中的 {{count}} 项资产吗？此操作不可恢复。",
+    "moveToTag": "移动到标签",
+    "selectTag": "选择标签",
+    "types": {
+      "article": "文章",
+      "note": "笔记",
+      "video": "视频",
+      "image": "图片"
+    },
+    "tags": {
+      "all": "全部",
+      "pendingArchive": "待归档",
+      "marketing": "营销",
+      "technology": "技术",
+      "design": "设计"
+    }
+  },
+  "library": {
+    "title": "知识库",
+    "search": "搜索知识库...",
+    "searchPlaceholder": "搜索",
+    "uploadFile": "上传文件",
+    "createFolder": "新建文件夹",
+    "batchMode": "批量选择",
+    "inputTag": "输入标签",
+    "addTag": "新增标签",
+    "previewUnavailable": "暂无预览",
+    "noFiles": "暂无文件",
+    "noMatchedFiles": "暂无匹配文件",
+    "moveTo": "移动到",
+    "moveFileMessage": "将选中的 {{count}} 个文件移动到：",
+    "deleteConfirm": "确认删除",
+    "delete": "删除",
+    "deleteFileMessage": "确定要删除选中的 {{count}} 个文件吗？",
+    "deleteWarning": "此操作无法撤销，请谨慎操作。",
+    "folders": {
+      "all": "全部",
+      "productDocs": "产品文档",
+      "techDocs": "技术文档",
+      "designSpec": "设计规范",
+      "meetingNotes": "会议记录"
+    }
+  },
+  "market": {
+    "title": "市场",
+    "explore": "探索",
+    "myAgents": "我的 Agent",
+    "searchPlaceholder": "搜索",
+    "all": "全部",
+    "mine": "我的",
+    "hired": "已雇佣",
+    "hire": "雇佣",
+    "fire": "解雇",
+    "hour": "小时",
+    "profile": "个人简介",
+    "noMatchedAgents": "暂无匹配的 Agent",
+    "tags": {
+      "all": "全部",
+      "contentCreation": "内容创作",
+      "dataAnalysis": "数据分析",
+      "design": "设计",
+      "development": "开发"
+    }
+  }
+}

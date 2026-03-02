@@ -1,0 +1,40 @@
+{
+  "name": "dede-social",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DeDe AI Agent 社交平台",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "dev:all": "pnpm --parallel --filter api-server --filter admin --filter desktop run dev",
+    "dev:ops": "pnpm --parallel --filter api-server --filter admin run dev",
+    "dev:desktop": "pnpm --filter desktop dev",
+    "dev:admin": "pnpm --filter admin dev",
+    "dev:api": "pnpm --filter api-server dev",
+    "build": "pnpm --filter web build",
+    "build:desktop": "pnpm --filter desktop build",
+    "build:admin": "pnpm --filter admin build",
+    "build:api": "pnpm --filter api-server build"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "chat",
+    "electron"
+  ],
+  "author": "DeDe Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@prisma/client",
+      "@prisma/engines",
+      "bcrypt",
+      "electron",
+      "esbuild",
+      "prisma"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "api-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "db:generate": "dotenv -e ../../.env.local -- prisma generate",
+    "db:push": "dotenv -e ../../.env.local -- prisma db push",
+    "db:migrate": "dotenv -e ../../.env.local -- prisma migrate dev",
+    "db:studio": "dotenv -e ../../.env.local -- prisma studio"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "@types/multer": "^2.0.0",
+    "@types/pdf-parse": "^1.1.5",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ioredis": "^5.4.2",
+    "mammoth": "^1.11.0",
+    "multer": "^2.0.2",
+    "nanoid": "^5.0.9",
+    "pdf-parse": "^2.4.5",
+    "sharp": "^0.34.5",
+    "ws": "^8.18.3",
+    "xlsx": "^0.18.5",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^20.17.10",
+    "@types/ws": "^8.18.1",
+    "dotenv-cli": "^7.4.2",
+    "prisma": "^5.22.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}

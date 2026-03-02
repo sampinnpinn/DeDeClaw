@@ -1,0 +1,255 @@
+{
+  "nav": {
+    "chat": "Chat",
+    "assets": "Assets",
+    "library": "Library",
+    "market": "Market"
+  },
+  "settings": {
+    "title": "Settings",
+    "sections": {
+      "profile": "Profile",
+      "team": "Team",
+      "general": "General",
+      "notifications": "Notifications",
+      "about": "About"
+    },
+    "profile": {
+      "title": "Personal Profile",
+      "username": "Username",
+      "email": "Email",
+      "signature": "Signature",
+      "signaturePlaceholder": "This is my signature",
+      "save": "Save",
+      "accountSecurity": "Account Security",
+      "changePassword": "Change Password",
+      "twoFactor": "Two-factor Authentication",
+      "notEnabled": "Not enabled",
+      "accountManagement": "Account Management",
+      "deactivateAccount": "Deactivate Account",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password",
+      "currentPasswordPlaceholder": "Enter current password",
+      "newPasswordPlaceholder": "Enter new password",
+      "confirmPasswordPlaceholder": "Re-enter new password",
+      "toast": {
+        "usernameRequired": "Username cannot be empty",
+        "emailInvalid": "Please enter a valid email address",
+        "saveSuccess": "Profile saved successfully"
+      }
+    },
+    "team": {
+      "title": "Team Members",
+      "spaceCode": "Space Code",
+      "spaceCodeDesc": "Share this code to invite members",
+      "regenerate": "Regenerate",
+      "members": "Members",
+      "memberCount": "{{count}} members",
+      "memberCount_one": "{{count}} member",
+      "role": "Role",
+      "roles": {
+        "admin": "Admin",
+        "member": "Member",
+        "guest": "Guest",
+        "remove": "Remove"
+      }
+    },
+    "general": {
+      "title": "General Settings",
+      "language": "Language",
+      "theme": "Theme",
+      "themes": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+      },
+      "startup": "Startup Settings",
+      "autoStart": "Launch on startup",
+      "minimizeToTray": "Minimize to system tray"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "newMessage": "New message notifications",
+      "mention": "Notify when mentioned",
+      "systemUpdate": "System update notifications",
+      "teamInvite": "Team invite notifications"
+    },
+    "about": {
+      "title": "About DeDe",
+      "version": "Version",
+      "checkUpdate": "Check for updates",
+      "currentVersion": "Current Version",
+      "lastUpdated": "Last Updated",
+      "systemInfo": "System Info",
+      "description": "A modern team collaboration and communication tool",
+      "docs": "View Documentation",
+      "feedback": "Send Feedback",
+      "contact": "Contact Us",
+      "logout": "Logout",
+      "clearCache": "Clear Cache"
+    }
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "confirm": "Confirm",
+    "select": "Please select",
+    "close": "Close",
+    "search": "Search",
+    "loading": "Loading...",
+    "noData": "No data",
+    "selectAll": "Select All",
+    "unselectAll": "Unselect All",
+    "upload": "Upload",
+    "back": "Back",
+    "reply": "Reply",
+    "more": "More"
+  },
+  "time": {
+    "justNow": "Just now",
+    "minutesAgo": "{{count}} minutes ago",
+    "minutesAgo_one": "{{count}} minute ago",
+    "hoursAgo": "{{count}} hours ago",
+    "hoursAgo_one": "{{count}} hour ago",
+    "daysAgo": "{{count}} days ago",
+    "daysAgo_one": "{{count}} day ago"
+  },
+  "chat": {
+    "inputPlaceholder": "Type a message...",
+    "send": "Send",
+    "typing": "Typing...",
+    "online": "Online",
+    "offline": "Offline",
+    "selectConversation": "Select a conversation to start chatting",
+    "search": "Search",
+    "voiceCall": "Voice Call",
+    "more": "More",
+    "addMember": "Add Member",
+    "channelSettings": "Channel Settings",
+    "pinChannel": "Pin Channel",
+    "unpinChannel": "Unpin Channel",
+    "uploadImage": "Image",
+    "uploadFile": "File",
+    "uploadVideo": "Video",
+    "onlineMode": "Online Mode",
+    "attach": "Attach",
+    "voice": "Voice",
+    "views": "{{count}} views",
+    "views_one": "{{count}} view"
+  },
+  "conversation": {
+    "searchPlaceholder": "Search",
+    "newChat": "New Chat",
+    "newGroup": "Create Group",
+    "addAgent": "Add Agent",
+    "yesterday": "Yesterday",
+    "minutes": "{{count}} min",
+    "hours": "{{count}} hr"
+  },
+  "channel": {
+    "selectGroup": "Select Group"
+  },
+  "messageInput": {
+    "placeholder": "Send a message in {{channelName}}",
+    "uploadImage": "Upload Image",
+    "uploadFile": "Upload File",
+    "createTask": "Create Task",
+    "emoji": "Emoji",
+    "sendHint": "Press Enter to send, Shift + Enter for newline"
+  },
+  "assets": {
+    "title": "Assets",
+    "createNew": "Create New",
+    "filter": "Filter",
+    "sort": "Sort",
+    "searchPlaceholder": "Search assets...",
+    "batchMode": "Batch Mode",
+    "exitBatchMode": "Exit Batch",
+    "selected": "{{count}} selected",
+    "selected_one": "{{count}} selected",
+    "delete": "Delete",
+    "move": "Move",
+    "importToLibrary": "Import to Library",
+    "importing": "Importing...",
+    "importToLibraryMessage": "Import {{count}} selected assets to library",
+    "selectLibraryTag": "Select library tag",
+    "keepInAssets": "Keep original files in assets",
+    "loadLibraryTagsFailed": "Failed to load library tags",
+    "noAssetSelected": "Please select assets to import",
+    "importSuccess": "Successfully imported {{count}} assets",
+    "importPartialFailed": "Import finished: {{success}} succeeded, {{failed}} failed",
+    "importFailed": "Import failed, please try again",
+    "addTag": "Add Tag",
+    "tagNamePlaceholder": "Tag name",
+    "deleteConfirm": "Confirm Delete",
+    "deleteMessage": "Are you sure you want to delete {{count}} selected assets? This action cannot be undone.",
+    "deleteMessage_one": "Are you sure you want to delete {{count}} selected asset? This action cannot be undone.",
+    "moveToTag": "Move to Tag",
+    "selectTag": "Select tag",
+    "types": {
+      "article": "Article",
+      "note": "Note",
+      "video": "Video",
+      "image": "Image"
+    },
+    "tags": {
+      "all": "All",
+      "pendingArchive": "Pending Archive",
+      "marketing": "Marketing",
+      "technology": "Technology",
+      "design": "Design"
+    }
+  },
+  "library": {
+    "title": "Library",
+    "search": "Search library...",
+    "searchPlaceholder": "Search",
+    "uploadFile": "Upload File",
+    "createFolder": "Create Folder",
+    "batchMode": "Batch Select",
+    "inputTag": "Enter tag",
+    "addTag": "Add Tag",
+    "previewUnavailable": "No Preview",
+    "noFiles": "No files",
+    "noMatchedFiles": "No matching files",
+    "moveTo": "Move To",
+    "moveFileMessage": "Move {{count}} selected files to:",
+    "moveFileMessage_one": "Move {{count}} selected file to:",
+    "deleteConfirm": "Confirm Delete",
+    "delete": "Delete",
+    "deleteFileMessage": "Are you sure you want to delete {{count}} selected files?",
+    "deleteFileMessage_one": "Are you sure you want to delete {{count}} selected file?",
+    "deleteWarning": "This action cannot be undone.",
+    "folders": {
+      "all": "All",
+      "productDocs": "Product Docs",
+      "techDocs": "Tech Docs",
+      "designSpec": "Design Specs",
+      "meetingNotes": "Meeting Notes"
+    }
+  },
+  "market": {
+    "title": "Market",
+    "explore": "Explore",
+    "myAgents": "My Agents",
+    "searchPlaceholder": "Search",
+    "all": "All",
+    "mine": "Mine",
+    "hired": "Hired",
+    "hire": "Hire",
+    "fire": "Fire",
+    "hour": "hour",
+    "profile": "Profile",
+    "noMatchedAgents": "No matching agents",
+    "tags": {
+      "all": "All",
+      "contentCreation": "Content Creation",
+      "dataAnalysis": "Data Analysis",
+      "design": "Design",
+      "development": "Development"
+    }
+  }
+}

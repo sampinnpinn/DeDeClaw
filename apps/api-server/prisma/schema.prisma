@@ -1,0 +1,289 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [vector]
+}
+
+model ModelProviderConfig {
+  id            String   @id @default(cuid())
+  customId      String   @unique
+  apiType       String
+  baseUrl       String
+  modelName     String
+  apiKey        String
+  customParams  Json     @default("[]")
+  isEnabled     Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("model_provider_configs")
+}
+
+model SystemConfig {
+  id                                String   @id @default(cuid())
+  key                               String   @unique
+  electronDataPushIntervalSeconds   Int      @default(20)
+  websocketHeartbeatSeconds         Int      @default(30)
+  isMaintenanceMode                 Boolean  @default(false)
+  updatedAt                         DateTime @updatedAt
+
+  @@map("system_configs")
+}
+
+model Agent {
+  id          String       @id @default(cuid())
+  agentId     String       @unique
+  name        String
+  avatar      String?
+  role        String
+  description String?
+  prompt      String?
+  skills      String?
+  type        String       @default("all")
+  priceRate   Float        @default(1.0)
+  priceUnit   String       @default("hour")
+  modelId     String?
+  isListed    Boolean      @default(false)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  hires       AgentHire[]
+
+  @@index([isListed])
+  @@map("agents")
+}
+
+model User {
+  id                String             @id @default(cuid())
+  userId            String             @unique
+  email             String             @unique
+  passwordHash      String
+  username          String
+  avatar            String?
+  signature         String?
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  workspaceMembers  WorkspaceMember[]
+
+  @@index([email])
+  @@map("users")
+}
+
+model Workspace {
+  id              String             @id @default(cuid())
+  workspaceId     String             @unique
+  name            String
+  type            String
+  ownerId         String
+  invitationCode  String             @unique
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+  members         WorkspaceMember[]
+
+  @@index([ownerId])
+  @@index([invitationCode])
+  @@map("workspaces")
+}
+
+model WorkspaceMember {
+  id           String    @id @default(cuid())
+  workspaceId  String
+  userId       String
+  role         String    @default("member")
+  joinedAt     DateTime  @default(now())
+  workspace    Workspace @relation(fields: [workspaceId], references: [workspaceId], onDelete: Cascade)
+  user         User      @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  @@unique([workspaceId, userId])
+  @@index([userId])
+  @@index([workspaceId])
+  @@map("workspace_members")
+}
+
+model InvitationCode {
+  id              String   @id @default(cuid())
+  code            String   @unique
+  workspaceId     String
+  createdById     String
+  maxUses         Int      @default(0)
+  usedCount       Int      @default(0)
+  expiresAt       DateTime?
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+
+  @@index([code])
+  @@index([workspaceId])
+  @@map("invitation_codes")
+}
+
+model AgentHire {
+  id          String   @id @default(cuid())
+  userId      String
+  agentId     String
+  hiredAt     DateTime @default(now())
+  canceledAt  DateTime?
+  isActive    Boolean  @default(true)
+  agent       Agent    @relation(fields: [agentId], references: [agentId], onDelete: Cascade)
+
+  @@unique([userId, agentId])
+  @@index([userId])
+  @@index([agentId])
+  @@map("agent_hires")
+}
+
+model Channel {
+  id              String    @id @default(cuid())
+  channelId       String    @unique
+  name            String
+  avatar          String?
+  workspaceId     String
+  createdById     String
+  agentIds        String[]
+  isMuted         Boolean   @default(false)
+  lastMessage     String?
+  lastMessageTime DateTime  @default(now())
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  messages        Message[]
+
+  @@index([workspaceId])
+  @@index([createdById])
+  @@map("channels")
+}
+
+model Message {
+  id          String   @id @default(cuid())
+  messageId   String   @unique
+  channelId   String
+  senderType  String   // "user" | "agent"
+  senderId    String   // userId 或 agentId
+  senderName  String
+  senderAvatar String?
+  content     String
+  ragSources  String[] @default([])
+  createdAt   DateTime @default(now())
+  channel     Channel  @relation(fields: [channelId], references: [channelId], onDelete: Cascade)
+
+  @@index([channelId, createdAt])
+  @@map("messages")
+}
+
+model LibraryFile {
+  id          String         @id @default(cuid())
+  fileId      String         @unique
+  workspaceId String
+  uploadedBy  String
+  fileName    String
+  fileType    String
+  filePath    String
+  fileSize    Int
+  mimeType    String
+  tags        String[]       @default([])
+  embedStatus String         @default("pending")
+  embedError  String?
+  chunkCount  Int            @default(0)
+  summary     String?
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  chunks      LibraryChunk[]
+
+  @@index([workspaceId])
+  @@index([embedStatus])
+  @@map("library_files")
+}
+
+model LibraryChunk {
+  id        String                       @id @default(cuid())
+  fileId    String
+  chunkIdx  Int
+  content   String
+  embedding Unsupported("vector(1536)")?
+  file      LibraryFile                  @relation(fields: [fileId], references: [fileId], onDelete: Cascade)
+
+  @@index([fileId])
+  @@map("library_chunks")
+}
+
+model Asset {
+  id                 String   @id @default(cuid())
+  assetId            String   @unique
+  workspaceId        String
+  createdById        String
+  title              String
+  assetType          String
+  content            String   @default("")
+  summary            String   @default("")
+  coverImage         String?
+  coverReferenceImage String?
+  coverGenerationStatus String @default("idle")
+  coverGenerationProgress Int   @default(0)
+  coverGenerationTaskId String?
+  coverGenerationError String?
+  coverGenerationStyle String?
+  coverStylePool      String[] @default([])
+  coverGenerationStartedAt DateTime?
+  coverGenerationFinishedAt DateTime?
+  tags               String[] @default([])
+  generationStatus   String    @default("idle")
+  generationProgress Int       @default(0)
+  shareToken         String?   @unique
+  shareExpiresAt     DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  @@index([workspaceId])
+  @@index([createdById])
+  @@map("assets")
+}
+
+model AssetFolderTag {
+  id          String   @id @default(cuid())
+  workspaceId String
+  name        String
+  createdAt   DateTime @default(now())
+
+  @@unique([workspaceId, name])
+  @@index([workspaceId])
+  @@map("asset_folder_tags")
+}
+
+model ChannelMemory {
+  id              String   @id @default(cuid())
+  channelId       String   @unique
+  summary         String   // 核心信息摘要（有损压缩）
+  keyFacts        String[] // 提取的关键事实列表
+  lastExtractedAt DateTime @default(now())
+  messageCount    Int      @default(0) // 已处理的消息数，用于判断是否需要更新
+  updatedAt       DateTime @updatedAt
+
+  @@map("channel_memories")
+}
+
+model ApiCallLog {
+  id               String   @id @default(cuid())
+  modelCustomId    String   // 使用的 API 自定义 ID
+  apiType          String   // llm / vector / image / video
+  callType         String   // chat / plan / rag_embed / memory
+  userId           String?  // 发起调用的用户 ID（后台自动触发时为 null）
+  userEmail        String?  // 用户邮箱（冗余存储，方便查询）
+  username         String?  // 用户昵称（冗余存储，方便查询）
+  channelId        String?  // 所属频道 ID（可选）
+  promptTokens     Int?     // 输入 token 数（字符数估算）
+  completionTokens Int?     // 输出 token 数（字符数估算）
+  totalTokens      Int?     // 总 token 数
+  durationMs       Int      // 调用耗时（毫秒）
+  isSuccess        Boolean  // 是否成功
+  errorMessage     String?  // 失败原因
+  createdAt        DateTime @default(now())
+
+  @@index([userId])
+  @@index([modelCustomId])
+  @@index([apiType])
+  @@index([callType])
+  @@index([createdAt])
+  @@map("api_call_logs")
+}

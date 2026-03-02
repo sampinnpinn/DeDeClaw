@@ -1,0 +1,150 @@
+.grid {
+  display: grid;
+  gap: 14px;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.metricCard {
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  padding: 14px;
+}
+
+.metricLabel {
+  margin: 0;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.metricValue {
+  margin: 6px 0 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.metricTrend {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.trendUp {
+  color: #15803d;
+}
+
+.trendDown {
+  color: #b91c1c;
+}
+
+.trendFlat {
+  color: #1d4ed8;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+  color: #374151;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.formGrid {
+  display: grid;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.label {
+  font-size: 13px;
+  color: #374151;
+}
+
+.input,
+.select {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 9px 10px;
+  font-size: 13px;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: #ff6154;
+  box-shadow: 0 0 0 3px rgba(255, 97, 84, 0.15);
+}
+
+.textareaLarge {
+  min-height: 180px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.inputFullWidth {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.primaryButton {
+  border: 0;
+  border-radius: 10px;
+  background: #ff6154;
+  color: #ffffff;
+  padding: 9px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.ghostButton {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #374151;
+  padding: 9px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.statusTag {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.statusActive {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.statusDisabled {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.note {
+  margin: 0;
+  color: #6b7280;
+  font-size: 12px;
+}

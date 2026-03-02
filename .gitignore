@@ -1,0 +1,40 @@
+node_modules
+
+# Build outputs
+dist
+release
+
+# TypeScript cache
+*.tsbuildinfo
+vite.config.d.ts
+
+# Lock files (pnpm only)
+package-lock.json
+yarn.lock
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+
+# Coverage / temp
+coverage
+.cache
+tmp
+temp
+
+# Runtime user data
+apps/api-server/library_files

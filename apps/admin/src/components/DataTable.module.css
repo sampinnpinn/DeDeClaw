@@ -1,0 +1,25 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.headCell {
+  text-align: left;
+  font-size: 12px;
+  color: #6b7280;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cell {
+  font-size: 13px;
+  color: #1f2937;
+  padding: 12px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.empty {
+  padding: 20px;
+  color: #9ca3af;
+  text-align: center;
+}
